@@ -29,7 +29,8 @@ const runMainLoop = (userName) => {
   const isUserWrong = isEvenNumber !== isEvenUserAnswer;
 
   if (isUserWrong || !isAnswerExist) {
-    const correctAnswer = Object.keys(possibleAnswers).find((answer) => possibleAnswers[answer] === isEvenNumber);
+    const correctAnswer = Object.keys(possibleAnswers)
+      .find((answer) => possibleAnswers[answer] === isEvenNumber);
     notifyFail(userName, userAnswer, correctAnswer);
     return;
   }
