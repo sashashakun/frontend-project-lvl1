@@ -5,7 +5,7 @@ let successInRowAmount = 0;
 const successInRowToWin = 3;
 const YES_ANSWER = 'yes';
 const NO_ANSWER = 'no';
-const possibleAnswers = [YES_ANSWER, NO_ANSWER];
+const possibleAnswers = { [YES_ANSWER]: true, [NO_ANSWER]: false };
 
 const notifyFail = (userName, userAnswer, correctAnswer) => {
   console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
@@ -24,12 +24,12 @@ const runMainLoop = (userName) => {
   const isEvenNumber = !(numberToGuess % 2);
   const userAnswer = readlineSync.question('Your answer: ');
 
-  const isAnswerExist = possibleAnswers.includes(userAnswer);
+  const isAnswerExist = Object.keys(possibleAnswers).includes(userAnswer);
   const isEvenUserAnswer = userAnswer === YES_ANSWER;
   const isUserWrong = isEvenNumber !== isEvenUserAnswer;
 
   if (isUserWrong || !isAnswerExist) {
-    const correctAnswer = possibleAnswers.find((k) => possibleAnswers[k] === isEvenNumber);
+    const correctAnswer = Object.keys(possibleAnswers).find((answer) => possibleAnswers[answer] === isEvenNumber);
     notifyFail(userName, userAnswer, correctAnswer);
     return;
   }
