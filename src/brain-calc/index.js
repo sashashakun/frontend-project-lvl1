@@ -11,7 +11,9 @@ const gameLauncher = createGameLauncher(() => {
   };
   const operationToApply = Object.keys(operations)[getNumInRange(0, 2)];
 
-  const userAnswer = ask(`${leftOperand} ${operationToApply} ${rightOperand}`);
+  const userAnswer = ask(
+    `What is the result of the expression?\nQuestion: ${leftOperand} ${operationToApply} ${rightOperand}`,
+  );
   const correctAnswer = operations[operationToApply];
   const isUserWrong = correctAnswer !== Number(userAnswer);
 

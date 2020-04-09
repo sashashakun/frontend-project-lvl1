@@ -29,7 +29,7 @@ export const notifySuccess = (userName) => {
 };
 
 export const ask = (question) => {
-  console.log(`Question: ${question}`);
+  console.log(question);
 
   return readlineSync.question('Your answer: ');
 };
