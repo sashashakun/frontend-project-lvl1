@@ -12,7 +12,7 @@ const gameLauncher = createGameLauncher(() => {
   const progressionSequenceToAsk = [
     sequence.slice(0, indexToChange).join(' '),
     '..',
-    sequence.slice(indexToChange + 1).join(' ')
+    sequence.slice(indexToChange + 1).join(' '),
   ].join(' ');
   const correctAnswer = sequence[indexToChange];
 
