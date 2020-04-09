@@ -34,14 +34,16 @@ export const ask = (question) => {
   return readlineSync.question('Your answer: ');
 };
 
+export const getNumInRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
 let successInRowAmount = 0;
 const successInRowToWin = 3;
 
 const runLoop = (userName, executeGameLogic) => {
-  const [isUserWrong, ...answers] = executeGameLogic();
+  const [userAnswer, correctAnswer] = executeGameLogic();
 
-  if (isUserWrong) {
-    notifyFail(userName, ...answers);
+  if (userAnswer !== correctAnswer) {
+    notifyFail(userName, userAnswer, correctAnswer);
     return;
   }
 

@@ -1,7 +1,6 @@
-import { ask, createGameLauncher } from '../index.js';
+import { ask, getNumInRange, createGameLauncher } from '../index.js';
 
 const gameLauncher = createGameLauncher(() => {
-  const getNumInRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
   const rightOperand = getNumInRange(1, 100);
   const leftOperand = getNumInRange(1, 100);
   const operations = {
@@ -10,14 +9,13 @@ const gameLauncher = createGameLauncher(() => {
     '*': leftOperand * rightOperand,
   };
   const operationToApply = Object.keys(operations)[getNumInRange(0, 2)];
+  const correctAnswer = operations[operationToApply];
 
   const userAnswer = ask(
     `What is the result of the expression?\nQuestion: ${leftOperand} ${operationToApply} ${rightOperand}`,
   );
-  const correctAnswer = operations[operationToApply];
-  const isUserWrong = correctAnswer !== Number(userAnswer);
 
-  return [isUserWrong, userAnswer, correctAnswer];
+  return [userAnswer, correctAnswer];
 });
 
 export default gameLauncher;
