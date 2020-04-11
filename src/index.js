@@ -42,7 +42,7 @@ const successInRowToWin = 3;
 const runLoop = (userName, executeGameLogic) => {
   const [userAnswer, correctAnswer] = executeGameLogic();
 
-  if (userAnswer !== correctAnswer) {
+  if (String(userAnswer) !== String(correctAnswer)) {
     notifyFail(userName, userAnswer, correctAnswer);
     return;
   }

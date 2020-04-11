@@ -1,4 +1,4 @@
-import { ask, getNumInRange, createGameLauncher } from '../index.js';
+import { ask, getNumInRange, createGameLauncher } from '../../index.js';
 
 const gameLauncher = createGameLauncher(() => {
   const rightOperand = getNumInRange(1, 100);

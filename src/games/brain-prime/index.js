@@ -1,4 +1,4 @@
-import { ask, createGameLauncher, getNumInRange } from '../index.js';
+import { ask, createGameLauncher, getNumInRange } from '../../index.js';
 
 const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {

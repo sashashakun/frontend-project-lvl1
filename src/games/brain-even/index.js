@@ -1,4 +1,4 @@
-import { ask, createGameLauncher } from '../index.js';
+import { ask, createGameLauncher } from '../../index.js';
 
 const gameLauncher = createGameLauncher(() => {
   const numberToGuess = Math.round(Math.random() * 10);

@@ -1,4 +1,4 @@
-import { ask, getNumInRange, createGameLauncher } from '../index.js';
+import { ask, getNumInRange, createGameLauncher } from '../../index.js';
 
 const gcd = (a, b) => (b ? gcd(b, a % b) : a);
 

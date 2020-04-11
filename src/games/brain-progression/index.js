@@ -1,4 +1,4 @@
-import { ask, getNumInRange, createGameLauncher } from '../index.js';
+import { ask, getNumInRange, createGameLauncher } from '../../index.js';
 
 const getArithmeticSequence = (initialValue, increment, sequenceSize) => Array.from(
   Array(sequenceSize).keys(),
@@ -16,9 +16,9 @@ const gameLauncher = createGameLauncher(() => {
   ].join(' ');
   const correctAnswer = sequence[indexToChange];
 
-  const userAnswer = Number(ask(
+  const userAnswer = ask(
     `What number is missing in the progression?\nQuestion: ${progressionSequenceToAsk}`,
-  ));
+  );
 
   return [userAnswer, correctAnswer];
 });
