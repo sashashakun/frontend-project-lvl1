@@ -4,4 +4,23 @@
 
 ![CI](https://github.com/sashashakun/frontend-project-lvl1/workflows/CI/badge.svg?branch=master)
 
-[![asciicast](https://asciinema.org/a/BX10LGwuBNFyMVF8M8AcfbkEg.svg)](https://asciinema.org/a/BX10LGwuBNFyMVF8M8AcfbkEg)
+
+Brain Even:
+
+[![asciicast](https://asciinema.org/a/VhoyxImygTX70Zn58LkI5oTwM.svg)](https://asciinema.org/a/VhoyxImygTX70Zn58LkI5oTwM)
+
+Brain Calc:
+
+[![asciicast](https://asciinema.org/a/yWiGbUTQT3iXE4O0rOU4DgNvi.svg)](https://asciinema.org/a/yWiGbUTQT3iXE4O0rOU4DgNvi)
+
+Brain GCD:
+
+[![asciicast](https://asciinema.org/a/Wan98QdoKoCRYQFWN29vmLtTC.svg)](https://asciinema.org/a/Wan98QdoKoCRYQFWN29vmLtTC)
+
+Brain Progression:
+
+[![asciicast](https://asciinema.org/a/YUtTOaVD5JzGF4OcBpoltfAgI.svg)](https://asciinema.org/a/YUtTOaVD5JzGF4OcBpoltfAgI)
+
+Brain Prime:
+
+[![asciicast](https://asciinema.org/a/TLLJeU4SfIsegmX7sN5PuU04I.svg)](https://asciinema.org/a/TLLJeU4SfIsegmX7sN5PuU04I)
