@@ -10,7 +10,9 @@ const isPrime = (num) => {
 };
 
 const gameLauncher = createGameLauncher(() => {
-  const numberToGuess = getNumInRange(1, 3571);
+  // stolen from wikipedia
+  const fiveHundredthPrimeNumber = 3571;
+  const numberToGuess = getNumInRange(1, fiveHundredthPrimeNumber);
   const correctAnswer = isPrime(numberToGuess) ? 'yes' : 'no';
 
   const userAnswer = ask(
