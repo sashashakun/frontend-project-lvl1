@@ -1,4 +1,4 @@
-import { ask, getNumInRange, createGameLauncher } from '../../index.js';
+import { ask, getNumInRange, createGameLauncher } from '../index.js';
 
 const gameLauncher = createGameLauncher(() => {
   const rightOperand = getNumInRange(1, 100);
@@ -8,7 +8,7 @@ const gameLauncher = createGameLauncher(() => {
     '-': leftOperand - rightOperand,
     '*': leftOperand * rightOperand,
   };
-  const operationToApply = Object.keys(operations)[getNumInRange(0, 2)];
+  const operationToApply = Object.keys(operations)[getNumInRange(0, operations.length - 1)];
   const correctAnswer = operations[operationToApply];
 
   const userAnswer = ask(

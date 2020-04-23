@@ -1,7 +1,7 @@
-import { ask, createGameLauncher } from '../../index.js';
+import { ask, createGameLauncher, getNumInRange } from '../index.js';
 
 const gameLauncher = createGameLauncher(() => {
-  const numberToGuess = Math.round(Math.random() * 10);
+  const numberToGuess = getNumInRange(1, 10);
   const correctAnswer = numberToGuess % 2 ? 'no' : 'yes';
 
   const userAnswer = ask(
