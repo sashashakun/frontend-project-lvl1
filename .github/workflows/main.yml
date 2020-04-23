@@ -10,5 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Lint all the things
-      run: make install 
-      run: make lint 
+      run: | 
+        make install 
+        make lint 
