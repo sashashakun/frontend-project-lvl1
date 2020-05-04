@@ -8,26 +8,6 @@ const greet = () => {
   console.log(`Hello, ${name}!`);
 };
 
-export const greetAndGetName = () => {
-  console.log('Welcome to the Brain Games!');
-
-  const name = readlineSync.question('May I have your name? ');
-
-  console.log(`Hello, ${name}!`);
-
-  return name;
-};
-
-export const notifyFail = (userName, userAnswer, correctAnswer) => {
-  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-  console.log(`Let's try again, ${userName}!`);
-};
-
-export const notifySuccess = (userName) => {
-  console.log('Correct!');
-  console.log(`Congratulations, ${userName}!`);
-};
-
 export const ask = (question) => {
   console.log(question);
 
@@ -43,13 +23,15 @@ const runLoop = (userName, executeGameLogic) => {
   const [userAnswer, correctAnswer] = executeGameLogic();
 
   if (String(userAnswer) !== String(correctAnswer)) {
-    notifyFail(userName, userAnswer, correctAnswer);
+    console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+    console.log(`Let's try again, ${userName}!`);
     return;
   }
 
   successInRowAmount += 1;
   if (successInRowAmount === successInRowToWin) {
-    notifySuccess(userName);
+    console.log('Correct!');
+    console.log(`Congratulations, ${userName}!`);
     return;
   }
 
@@ -57,7 +39,11 @@ const runLoop = (userName, executeGameLogic) => {
 };
 
 export const createGameLauncher = (executeGameLogic) => () => {
-  const name = greetAndGetName();
+  console.log('Welcome to the Brain Games!');
+
+  const name = readlineSync.question('May I have your name? ');
+
+  console.log(`Hello, ${name}!`);
 
   runLoop(name, executeGameLogic);
 };
