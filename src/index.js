@@ -19,8 +19,11 @@ export const getNumInRange = (min, max) => Math.floor(Math.random() * (max - min
 let successInRowAmount = 0;
 const successInRowToWin = 3;
 
-const runLoop = (userName, executeGameLogic) => {
-  const [userAnswer, correctAnswer] = executeGameLogic();
+const runLoop = (userName, game) => {
+  const { getCorrectAnswer, playerQuestion } = game;
+
+  const correctAnswer = getCorrectAnswer();
+  const userAnswer = ask(playerQuestion);
 
   if (String(userAnswer) !== String(correctAnswer)) {
     console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
@@ -35,17 +38,17 @@ const runLoop = (userName, executeGameLogic) => {
     return;
   }
 
-  runLoop(userName, executeGameLogic);
+  runLoop(userName, game);
 };
 
-export const createGameLauncher = (executeGameLogic) => () => {
+export const createGameLauncher = (game) => () => {
   console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${name}!`);
 
-  runLoop(name, executeGameLogic);
+  runLoop(name, game);
 };
 
 export default greet;
