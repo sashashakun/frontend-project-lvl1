@@ -1,4 +1,4 @@
-import { ask, createGameLauncher, getNumInRange } from '../index.js';
+import { createGameLauncher, getNumInRange } from '../index.js';
 
 const gameLauncher = createGameLauncher({
   const getCorrectAnswer = () => {
@@ -8,7 +8,7 @@ const gameLauncher = createGameLauncher({
     return correctAnswer;
   }
 
-  const question = `Answer "yes" if the number is even, otherwise answer "no".\nQuestion: ${numberToGuess}`;
+  const playerQuestion = `Answer "yes" if the number is even, otherwise answer "no".\nQuestion: ${numberToGuess}`;
 
   return { getCorrectAnswer, playerQuestion };
 });
